@@ -4,18 +4,31 @@
 <html>
     <head>
         <title>Launchpad Attempt</title>
+        <link href="https://fonts.google.com/specimen/Be+Vietnam" rel='stylesheet'>
         <style>
             #grid_header {
                 display: grid;
                 grid-template-columns: 20% 70% auto;
                 align-items: baseline;
                 grid-template-rows: auto;
-                justify-content: space-evenly;
             }
             #grid_header_nav {
+                font-family: Be+Vietnam;
                 display: grid;
                 list-style-type: none;
                 grid-template-columns: auto auto auto auto auto;
+            }
+            #grid_main {
+                display: grid;
+                width: 200%;
+                grid-template-columns: 50% 50%;
+            }
+            #grid_main_obj {
+                /*display: grid;
+                grid-template-rows: 50% 30% 20%;*/
+            }
+            body {
+                background-image: url("../design/bg-simplify-section-desktop");
             }
         </style>
     </head>
@@ -34,5 +47,13 @@
             </nav>
             <img src='get_started.png'>
         </header>
+        <main id='main_header'>
+            <div id='grid_main_obj'>
+                <h1>Bring everyone together to build better products.</h1>
+                <p>Manage makes it simple for software teams to plan day-to-day tasks while keeping the larger team goal in view.</p>
+                <!-- <img src='get_started.png'> -->
+            </div>
+            <img src='../images/illustration-intro.svg'>
+        </main>
     </body>
 </html>
