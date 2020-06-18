@@ -4,56 +4,192 @@
 <html>
     <head>
         <title>Launchpad Attempt</title>
-        <link href="https://fonts.google.com/specimen/Be+Vietnam" rel='stylesheet'>
+        <link href="https://fonts.google.com/specimen/Be+Vietnam:300,400,600,700&amp;lang=en" rel='stylesheet'/>
         <style>
-            #grid_header {
-                display: grid;
-                grid-template-columns: 20% 70% auto;
-                align-items: baseline;
-                grid-template-rows: auto;
+            @media only screen and (max-width: 375px) {
+                .max-width {
+                    max-width: 460px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                #flex_header {
+                    height: 150%;
+                }
+                .get_started {
+                    /*max-width: 10px;*/
+                    height: auto;
+                }
+                li {
+                    padding-left: 0%;
+                    padding-right: 0%;
+                    margin-left: 0%;
+                    margin-right: 0%;
+                }
+                #illustration-intro {
+                    max-width: 300px;
+                    height: auto;
+                    display: inline-block;
+                }
             }
-            #grid_header_nav {
+            .max-width {
+                max-width: 960px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            p {
+                /* pass (probably should be a color) */
+            }
+            #flex_header {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 1%;
+                margin-bottom: 1%;
+            }
+            #flex_header_nav {
                 font-family: Be+Vietnam;
-                display: grid;
+                display: flex;
+                justify-content: space-around;
                 list-style-type: none;
-                grid-template-columns: auto auto auto auto auto;
             }
-            #grid_main {
+            li {
+                margin-right: 10px;
+            }
+            .get_started {
+                    margin-left: 100px;
+                    max-width: 100px;
+                    height: auto;
+                    flex-shrink: 4;
+                }
+            #flex_main {
+                justify-content: space-between;
+                position: relative;
+                align-items: center;
+                display: flex;
+                /*flex-template-columns: 50% 50%;*/
+            }
+            #flex_main div {
+                flex-shrink: 4;
+            }
+            #flex_main img {
+                flex-shrink: 4;
+            }
+            
+            /*
+            #flex_main_obj {
+                text-align: 1;
+                display: flex;
+                flex-template-rows: 50% 30% 60%;
+            }
+            */
+            #section_c {
+                display: flex;
+                justify-content: space-between;
+            }
+            #section_c #list {
                 display: grid;
-                width: 200%;
-                grid-template-columns: 50% 50%;
-            }
-            #grid_main_obj {
-                /*display: grid;
-                grid-template-rows: 50% 30% 20%;*/
+                grid-template-rows: auto auto auto;
+                margin-left: 100px;
             }
             body {
                 background-image: url("../design/bg-simplify-section-desktop");
             }
+            #section_d {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            #section_d img {
+                width: 40px;
+                height: auto;
+            }
+            #section_d > div > div {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding-left: 2.5%;
+                padding-right: 2.5%;
+                /*background-color: blanchedalmond;*/
+            }
+            .scrollbar {
+                display: flex;
+                flex-direction: columns;
+                overflow: scroll;
+            }
         </style>
     </head>
-    <body>
-        <!-- Group A -->
-        <header id='grid_header'>
-            <img src='../images/logo.svg'>
+    <body class='max-width'>
+        <!-- Section A -->
+        <header id='flex_header'>
+            <img id='logo' style='flex-shrink: 4;' src='../images/logo.svg'>
             <nav>
-                <ul id='grid_header_nav'>
-                    <li>Pricing</li>
+                <ul id='flex_header_nav'>
+                    <li><a>Pricing</a></li>
                     <li>Product</li>
                     <li>About Us</li>
                     <li>Careers</li>
                     <li>Community</li>
                 </ul>
             </nav>
-            <img src='get_started.png'>
+            <img class='get_started' src='get_started.png'>
         </header>
-        <main id='main_header'>
-            <div id='grid_main_obj'>
+        <!-- Section B -->
+        <main id='flex_main' class='max-width'>
+            <div id='flex_main_obj'>
                 <h1>Bring everyone together to build better products.</h1>
                 <p>Manage makes it simple for software teams to plan day-to-day tasks while keeping the larger team goal in view.</p>
                 <!-- <img src='get_started.png'> -->
             </div>
-            <img src='../images/illustration-intro.svg'>
+            <img id='illustration-intro'src='../images/illustration-intro.svg'>
         </main>
+        <!-- Section C-->
+        <div id='section_c'>
+            <div>
+                <h1>What's different about Manage?</h1>
+                <p>Manage provides all the functionality your team needs, without the complexity. Our software is tailor-made for modern digital product teams.</p>
+            </div>
+            <div id='list'>
+                <div>
+                    <h1>Track company-wide progress</h1>
+                    <p>See how your day-to-day taks fit into the wider vision. Go from tracking progress at the milestone level all the way done to the smallest of details. Never lose sight of the bigger picture again.</p>
+                </div>
+                <div>
+                    <h1>Advanced built-in reports</h1>
+                    <p>Set internal delivery estimates and track progress toward company goals. Out customisable dashboard helps you build out of the reports you need to keep key stakeholders informed.</p>
+                </div>
+                <div>
+                    <h1>Everything you need in one place</h1>
+                    <p>Stop jumping from one service to another to communicate, store files, track tasks and share documents. Manage offers an all-in-one team productivity solution.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Section D-->
+        <div id='section_d'>
+            <h1>What they've said</h1>
+            <div class='scrollbar'>
+                <div>
+                    <img src="../images/avatar-anisha.png" alt="">
+                    <h3>Anisha Li</h3>
+                    <p>Manage has supercharged our team's workflow. The ability to maintain visiblity on larger milestones at all times keeps everyone motivated.</p>
+                </div>
+                <div>
+                    <img src="../images/avatar-ali.png" alt="">
+                    <h3>Ali Bravo</h3>
+                    <p>We have been able to cancel so many other subscriptions since using Manage. There is no more cross-channel confusion and everyone is much more focused.</p>
+                </div>
+                <div>
+                    <img src="../images/avatar-richard.png" alt="">
+                    <h3>Richard Watts</h3>
+                    <p>Manage allows us to provide structure and process. It keeps us organized and focused. I can't stop recommending them to everyone I talk to!</p>
+                </div>
+                <div>
+                    <img src="../images/avatar-shanai.png" alt="">
+                    <h3>Shanai Gough</h3>
+                    <p>Their software allows us to track, manage and collaborate on our projects from anywhere. It keeps the whole team in-sync without being intrusive.</p>
+                </div>
+            </div>
+        </div>
+        </div>
     </body>
 </html>
